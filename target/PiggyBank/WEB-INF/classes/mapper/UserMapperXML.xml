@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 必须跟 UserMapper 接口的全限定名称一致 -->
+<mapper namespace="com.qiu.mapper.UserMapper">
+
+    <!-- id 的取值必须跟 UserMapper 中相应方法名称一致 -->
+    <!-- parameterType 必须跟 UserMapper 中 save 方法的参数一致 -->
+    <!-- useGeneratedKeys = "true" 表示可以通过 mybatis 获取由数据库产生的主键 -->
+    <!-- keyProperty = "id" 表示将数据库产生的主键赋值给 User 对象的 id 属性中-->
+    <insert id="save" parameterType="com.qiu.entity.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO Account (id, username , password ) VALUES ( #{id},#{username} ,#{password} )
+    </insert>
+
+</mapper>
